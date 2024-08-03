@@ -1,7 +1,9 @@
 import React from 'react'
 import NavBar from '../componenets/NavBar'
 import FooterCourse from '../componenets/FooterCourse'
-import Course from '../componenets/Course'
+import CourseInfo from '../componenets/CourseInfo'
+
+
 
 export default function Courses() {
   return (
@@ -9,8 +11,7 @@ export default function Courses() {
        <>
        <NavBar/>
        
-         <Course />
-       
+       <CourseInfo/>
        <FooterCourse/>
      </>
   )

@@ -3,7 +3,7 @@ function Footer() {
 
     return (
     
-    <div className="footer max-w-screen-2xl container mx-auto md:px-20 px-4  ">
+    <div className="footer max-w-screen-2xl container mx-auto md:px-20 px-4 mt-10 ">
     <footer className="footer  text-base-content p-10 bg-slate-500 text-white">
   <nav >
     <h6 className="footer-title hover:text-slate-950">Services</h6>

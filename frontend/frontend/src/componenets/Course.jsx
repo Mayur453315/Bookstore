@@ -1,16 +1,33 @@
-import React from 'react'
-import NavBar from './NavBar'
-import CardList from './CardList'
-import CourseList from './CourseList'
+
+
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 import '../App.css';
+import Card1 from './Card1';
+
 export default function Course() {
+  const [book, setBook] = useState([]);
+
+  useEffect(() => {
+    const getBook = async () => {
+      try {
+        const response = await axios.get('http://localhost:4001/book');
+        console.log(response.data);
+        setBook(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getBook();
+  }, []);
+
   return (
     <>
-    
-    <div className= {"course max-w-screen-2xl container mx-auto md:px-20 px-4 "}>
+      <div className="course max-w-screen-2xl container mx-auto md:px-20 px-4">
         <div className="mt-15 items-center justify-center text-center">
-          <h1 className="text-2xl  pt-32 md:text-4xl ">
-            We're delighted to have you{" "}
+          <h1 className="text-2xl pt-32 md:text-4xl">
+            We're delighted to have you
             <span className="text-pink-500"> Here! :)</span>
           </h1>
           <p className="mt-12">
@@ -22,20 +39,18 @@ export default function Course() {
             animi eos aut. Nobis quisquam reiciendis sunt quis sed magnam
             consequatur!
           </p>
-          <a href="/">
-          <button className="mt-6 bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-700 duration-300">
+          <Link to="/">
+            <button className="mt-6 bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-700 duration-300">
               Back
             </button>
-          </a>
-          <div >
-        <CourseList/>
-            </div>
-        </div>
+          </Link>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {book.map((item) => (
+              <Card1 key={item.id} item={item} />
+            ))}
           </div>
-          
-        
-        
-    
+        </div>
+      </div>
     </>
-  )
+  );
 }

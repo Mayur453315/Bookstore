@@ -24,10 +24,10 @@ function Banner() {
     <path
       d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
   </svg>
-  <input type="text" className="grow" placeholder="Email" />
+  <input type="text" className="grow text-gray-900" placeholder="Email" />
 </label>
         </div>
-        <button className="btn btn-secondary mt-6">Secondary</button>
+        <button className="btn bg-fuchsia-700  text-white mt-6 hover:bg-fuchsia-950">Get Started</button>
          </div>
             
         <div className="order-1 w-full md:w-1/2">
